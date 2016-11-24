@@ -14,7 +14,7 @@ import struct
 
 BROADCAST_IP = '255.255.255.255'
 DEFAULT_PORT = 9
-DEFAULT_INTERFACE = 'eth0'
+DEFAULT_INTERFACE = b'eth0'
 
 
 def create_magic_packet(macaddress):
@@ -56,7 +56,8 @@ def send_magic_packet(*macs, **kwargs):
                      to (default "255.255.255.255")
     :key port: the port of the host to send the magic packet to
                (default 9)
-    :key interface: the interface of the host used to send the magic packet
+    :key interface: the interface of the host used to send the magic
+               packet (default b'eth0')
 
     """
     packets = []
